@@ -1,0 +1,45 @@
+<main class="main">
+  <div class="content">
+    <div class="left-side">
+      <h1>Hello, {{ title }}</h1>
+      <!-- First Component -->
+      <hr />
+      <h3>First Component</h3>
+      <app-menu></app-menu>
+      <!-- interpolação -->
+      <hr />
+      <h3>Interpolação</h3>
+      <app-button label="{{ buttonLabel }}"></app-button>
+      <app-button [label]="buttonSecond"></app-button>
+      <!-- property binding -->
+      <hr />
+      <h3>Property Binding</h3>
+      <app-button label="TEST"></app-button>
+      <app-button [label]="'buttonSecond'"></app-button>
+      <!-- two way data binding -->
+      <hr />
+      <h3>Two way binding</h3>
+      <app-entry-data></app-entry-data>
+      <!-- OnInit, OnChanges -->
+      <hr />
+      <h3>OnInit, OnChanges</h3>
+      <app-title nome="produto 1"></app-title>
+      <app-title nome="produto 2"></app-title>
+      <!-- DoCheck, Content, View, OnDestroy -->
+      <hr />
+      <h3>DoCheck, Content, View, OnDestroy</h3>
+      <app-check-sample *ngIf="isAliveCheckSample"></app-check-sample>
+      <button (click)="disposeCheckSample()">Destruir</button>
+      <!-- ngIf com template -->
+      <app-card *ngIf="isAliveCard; else anotherBlock"></app-card>
+      <ng-template #anotherBlock>
+        <p>bloco secreto</p>
+      </ng-template>
+      <!-- NgClass, ngStyle, ngModel, ngTemplate, ngContent -->
+      <app-comp-atributos>
+        <h2>Eu vim de fora</h2>
+      </app-comp-atributos>
+    </div>
+  </div>
+</main>
+<router-outlet></router-outlet>

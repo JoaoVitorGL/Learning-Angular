@@ -1,0 +1,39 @@
+<!-- NgIf -->
+<hr />
+<h3>ngIf</h3>
+<p>ngIf</p>
+<!-- ngFor -->
+<hr />
+<h3>ngFor</h3>
+<ul>
+  <li *ngFor="let p of produtos; let i = index" (click)="remover(i)">
+    {{ i }} - {{ p }}
+  </li>
+  <button (click)="adicionar()">Adicionar</button>
+</ul>
+<!-- ngSwitch -->
+<hr />
+<h3>ngSwitch</h3>
+<div [ngSwitch]="menuType">
+  <div *ngSwitchDefault="'user'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'admin'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuários</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'superuser'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuários</li>
+      <li>gerenciar admins</li>
+    </ul>
+  </div>
+</div>
