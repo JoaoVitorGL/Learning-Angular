@@ -1,0 +1,19 @@
+<div class="search">
+  <input type="text" (input)="getPokemon($any($event.target).value)" />
+</div>
+
+<div class="card">
+  <div class="card-title">
+    <h3>{{ pokemon.name | uppercase }}</h3>
+  </div>
+
+  <div class="card-body">
+    <img [src]="pokemon.sprites.front_default" height="200" alt="pokemon" />
+  </div>
+
+  <div class="card-stats">
+    @for (t of pokemon.types; track t.type) {
+    <span class="card-stats-type">{{ t.type.name | uppercase }}</span>
+    }
+  </div>
+</div>

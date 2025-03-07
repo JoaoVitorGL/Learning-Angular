@@ -19,6 +19,24 @@
         portfólio
       </a>
     </li>
+    <li>
+      <a
+        [routerLink]="['/login']"
+        [routerLinkActive]="['activated']"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        login
+      </a>
+    </li>
+    <li>
+      <a
+        [routerLink]="['/guard']"
+        [routerLinkActive]="['activated']"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        testguard - link com guard (só acessa com login)
+      </a>
+    </li>
   </ul>
 </div>
 <hr />
